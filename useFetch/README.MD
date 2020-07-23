@@ -1,4 +1,4 @@
-# useCounter Hook
+# useFetch Hook
 
 Ejemplo:
 
