@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 export const useForm = (initialState = {}) => {
-    const [values, setValues] = useState(initialState);
+    const [formValues, setFormValues] = useState(initialState);
 
-    const handleOnChange = ({ target }) => {
-        setValues({ ...values, [target.name]: target.value });
+    const onChangeFormValues = ({ target }) => {
+        setFormValues({ ...values, [target.name]: target.value });
     };
 
-    const reset = () => {
-        setValues(initialState);
+    const resetFormValues = () => {
+        setFormValues({ initialState });
     };
 
-    return [values, handleOnChange, reset];
+    return { formValues, onChangeFormValues, resetFormValues, setFormValues };
 };
